@@ -33,6 +33,20 @@ app.get('/utilisateur',(req, res)=>{
             res.status(400).json(err)
         })
 })
+
+
+// --- CRUD ...
+
+app.post('/utilisateur',(req, res)=>{
+	let Utilisateur = mongoose.model('Utilisateur');
+	let unUtilisateur = new Utilisateur(req.body);
+        unUtilisateur.save().then((result)=>{
+            res.status(200).json(unUtilisateur)
+        },(err)=>{
+            res.status(400).json(err)
+        })
+})
+
 // ------------------------
 // START SERVER
 // ------------------------
