@@ -46,7 +46,17 @@ app.post('/utilisateur',(req, res)=>{
             res.status(400).json(err)
         })
 })
+app.get('/utilisateur/:idUtilisateur',(req, res)=>{
+	res.status(200).json(temp.pop())
+})
 
+app.put('/utilisateur/:idUtilisateur',(req, res)=>{
+	res.status(204).json()
+})
+
+app.delete('/utilisateur/:idUtilisateur',(req, res)=>{
+	res.status(204).json()
+})
 // ------------------------
 // START SERVER
 // ------------------------
